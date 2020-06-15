@@ -15,9 +15,18 @@ Create a function called map that takes two inputs:
 Have `map` return a new array filled with numbers that are the result of using the 'callback' function on each element of the input array.
 
 ```js
+function map (arr, callback) {
+ 
+
+
+}
+
 map([1,2,3,4,5], multiplyByTwo); //-> [2,4,6,8,10]
 multiplyByTwo(1); //-> 2
 multiplyByTwo(2); //-> 4
+
+
+
 ```
 
 ## Challenge 4

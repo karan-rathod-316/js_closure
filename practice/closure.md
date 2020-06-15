@@ -5,6 +5,12 @@
 ```js
 // Your code goes here
 
+function multiplyBy(input) {
+  return function multiplyBy(num) {
+  return input * num;
+}
+}
+
 const double = multiplyBy(2);
 const final = double(15); // final should be 30
 ```
@@ -13,6 +19,12 @@ const final = double(15); // final should be 30
 
 ```js
 // Your code goes here
+function fullName (firstName) {
+  return function (lastName) {
+  return firstName + " " + lastName
+}
+
+}
 
 const name = fullName("Will");
 const final = name("Smith"); // final should be "Will Smith"
@@ -21,9 +33,7 @@ const final = name("Smith"); // final should be "Will Smith"
 3. Write a function called `isInBetween` which takes two parameter `a` and `b` and returns a function. When you call the returned function with any number it returns `true` if the value is in between `a` and `b`.
 
 ```js
-function isInBetween(a, b) {
-  // your code goes here
-}
+
 
 const isChild = isInBetween(10, 100);
 isChild(21); // true
@@ -35,7 +45,10 @@ isChild(103); // false
 
 ```js
 function letsWishThem(greeting) {
-  // your code goes here
+  return function(message) {
+      return greeting + " " + message
+
+  }
 }
 
 const callWithHey = letsWishThem("Hey");
@@ -48,7 +61,10 @@ callWithHello("How Are You?"); // Hello How Are You?
 
 ```js
 function addGame(gameName) {
-  // your code goes here
+  let score = 0;
+    return function (){
+     return `Score of ${gameName} is ${score++}`
+  }
 }
 
 // Output
@@ -64,7 +80,7 @@ cricket(); // Your score of Cricket is 2
 
 ```js
 function getCard(suit) {
-  // your code goes here
+        
 }
 
 // Output

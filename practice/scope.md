@@ -8,6 +8,7 @@ const lastName = "Stark";
 var knownAs = "no one";
 
 console.log(window.firstName, window.lastName, window.knownAs);
+//undefined undefined no one
 ```
 
 2. Guess the output:
@@ -22,6 +23,7 @@ function fullName(a, b) {
 }
 
 console.log(window.fullName(firstName, lastName));
+//AryaStark
 ```
 
 3. Make a Execution Context Diagram for the following JS and write the output.
@@ -33,6 +35,7 @@ fucntion addOne(num){
 var one = addOne(0);
 var two = addOne(1);
 console.log(one, two);
+//1 2
 ```
 
 4. Make a Execution Context Diagram for the following JS and write the output.
@@ -90,6 +93,7 @@ function isAwesome() {
   console.log(awesome);
 }
 isAwesome();
+//undefined
 ```
 
 9. What will be the output of the following
@@ -103,6 +107,7 @@ function isAwesome() {
   console.log(awesome);
 }
 isAwesome();
+//true
 ```
 
 10. What will be the output of the following
@@ -116,6 +121,7 @@ function isAwesome() {
   console.log(awesome);
 }
 isAwesome();
+//undefined
 ```
 
 11. What will be the output of the following
@@ -130,6 +136,7 @@ function fullName(a, b) {
 }
 const name = fullName(firstName, lastName);
 console.log(name);
+//AryaStark
 ```
 
 12. What will be the output of the following
@@ -144,6 +151,7 @@ function fullName(a, b) {
 }
 const name = fullName(firstName, lastName);
 console.log(name);
+//AryaStark
 ```
 
 13. Guess the output of the code below with a reason.
@@ -155,6 +163,7 @@ function sayHello() {
 sayHello();
 
 console.log(name);
+//undefined
 ```
 
 14. Guess the output of the code below with a reason.
@@ -164,6 +173,7 @@ if (true) {
   var name = "Arya Stark";
 }
 console.log(name);
+//Arya Stark
 ```
 
 15. Guess the output of the code below with a reason.
@@ -173,6 +183,7 @@ if (true) {
   let name = "Arya Stark";
 }
 console.log(name);
+//Arya Stark
 ```
 
 16. Guess the output of the code below with a reason.
@@ -182,6 +193,7 @@ for (var i = 0; i < 20; i++) {
   //
 }
 console.log(i);
+//20 
 ```
 
 17. Guess the output of the code below with a reason.
@@ -191,6 +203,7 @@ for (let i = 0; i < 20; i++) {
   //
 }
 console.log(i);
+//ReferenceError: i is not defined - let is not accessible outside scope
 ```
 
 18. Guess the output of the code below with a reason.
@@ -200,6 +213,11 @@ for (var i = 0; i < 20; i++) {
   setTimeout(() => console.log(i, "first"), 100);
 }
 console.log(i, "second");
+//20 "second"
+//20 "first"(20 times)
+//the set timeout function delays the execution of console.log(i, "first"), 100);
+
+
 ```
 
 19. Guess the output of the code below with a reason.
@@ -209,6 +227,8 @@ for (let i = 0; i < 20; i++) {
   setTimeout(() => console.log(i, "first"), 100);
 }
 console.log(i, "second");
+//Uncaught ReferenceError: i is not defined
+// 0 "first" - 19 "first"
 ```
 
 20. Guess the output and the reason behind that.
@@ -220,6 +240,8 @@ function sample() {
   }
   console.log(username);
 }
+
+//John Snow
 ```
 
 21. Guess the output and the reason behind that.
@@ -231,6 +253,8 @@ function sample() {
   }
   console.log(username);
 }
+//ReferenceError: username is not defined
+//let is restricted within the curly brackets it is placed in
 ```
 
 22. Guess the output and the reason behind that.
@@ -244,6 +268,9 @@ function sample() {
   }
   console.log(username, "second");
 }
+//John Snow 
+//John Snow second
+
 ```
 
 23. Guess the output and the reason behind that.
@@ -257,6 +284,9 @@ function sample() {
   }
   console.log(username, "second");
 }
+//John Snow first 
+//Arya Stark second 
+
 ```
 
 24. Guess the output and the reason behind that.
@@ -270,6 +300,9 @@ function sample(...args) {
 }
 
 sample("First", "Second", "Third");
+//Hello I am First 
+//Hello I am Second 
+//Hello I am Third 
 ```
 
 25. Guess the output and the reason behind that.
@@ -283,6 +316,10 @@ function sample(...args) {
 }
 
 sample("First", "Second", "Third");
+//Hello I am First 
+//Hello I am Second 
+//Hello I am Third 
+
 ```
 
 26. Guess the output and the reason behind that.
@@ -296,6 +333,7 @@ if (true) {
   let username = "Hello World!";
   myFunc();
 }
+//ReferenceError: "can't access lexical declaration `username' before initialization"
 ```
 
 27. Guess the output and the reason behind that.
@@ -310,6 +348,7 @@ function outer() {
 }
 
 outer();
+//I love this movie called ${movie.toUpperCase()}
 ```
 
 28. Guess the output and the reason behind that.
@@ -325,6 +364,7 @@ function outer() {
 }
 
 outer();
+//I love this movie called ${movie.toUpperCase()}
 ```
 
 29. Guess the output and the reason behind that.
@@ -344,6 +384,7 @@ function outer() {
 }
 
 outer();
+//I love this movie called ${movie.toUpperCase()}
 ```
 
 30. Execute all the functions inside `allFunctions` variable using any loop. (Hint: use for of loop functions are object)
@@ -363,7 +404,9 @@ const divide = (a, b) => {
 };
 
 let allFunctions = [add, sub, multiply, divide];
-```
+for(let operation of allFunctions){
+  console.log(operation(10,20))
+}```
 
 31. You have to pass 10 and 12 as initial value and find the final output when you pass the return value of one function as an input to the next function in the array `allFunctions`.
 
