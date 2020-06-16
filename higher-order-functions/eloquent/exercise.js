@@ -5,9 +5,7 @@ let arrays = [
     [6]
 ];
 
-console.log(arrays.reduce(function(flat, current) {
-    return flat.concat(current);
-}, []));
+console.log(arrays.reduce((a, b) => { return a.concat(b) }))
 
 // → [1, 2, 3, 4, 5, 6]
 
@@ -20,8 +18,25 @@ loop(3, n => n > 0, n => n - 1, console.log);
 // → 1
 
 // Challenge 3. Everything
-function every(array, test) {
-    // Your code here.
+every = (arr, predicate) => {
+    if (arr.length === 0) { return true; } else {
+        for (let i = 0; i < arr.length; i++) {
+            if (!predicate(arr[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+some = (arr, predicate) => {
+    if (arr.length === 0) {
+        return true;
+    } else {
+        for (let i = 0; i < arr.length; i++) {
+            if (predicate(arr[i])) { return true; }
+        }
+    }
+    return false;
 }
 
 console.log(every([1, 3, 5], n => n < 10));
